@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ViewController: UIViewController
+public class creativeViewController: UIViewController
 {
 
    public override func viewDidLoad() -> Void
