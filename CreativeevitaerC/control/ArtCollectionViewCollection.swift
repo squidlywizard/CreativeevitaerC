@@ -19,7 +19,7 @@ public class ArtCollectionViewCollection: UICollectionViewController
     private let itemsPerRowNormal : CGFloat = 6
     
     private let creativeCs : [UIImage?]  =
-    {
+    {//list in swift
         return [
             UIImage(named: "wizardCat"),
             UIImage(named: "spokbon"),
@@ -28,12 +28,28 @@ public class ArtCollectionViewCollection: UICollectionViewController
             UIImage(named: "bowBones"),
             UIImage(named: "haikubon"),
             UIImage(named: "helthBone"),
-            UIImage(named: "myimage"),
+            UIImage(named: "my image"),
             
             
         ]
     }()
-
+    
+    private let labels : [String] =
+    {//array list of strings
+        return [
+            "cat",
+            "bone",
+            "artbone",
+            "rattle me bone",
+            "dangerBone",
+            "bone bone bone bone bone bone",
+            "wellBone",
+            "mydrawing"
+            
+        ]
+    }()
+    //MARK: - Lifecycle
+    // mark is used like java doc
   public override func viewDidLoad()  -> Void
   {
         super.viewDidLoad()// when screen initalizes
@@ -75,7 +91,7 @@ public class ArtCollectionViewCollection: UICollectionViewController
         return 0
     }
 
-    public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell// the _ means it doesnt have an outside name
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
@@ -85,6 +101,18 @@ public class ArtCollectionViewCollection: UICollectionViewController
     }
 
     // MARK: UICollectionViewDelegate
+    
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionView,
+                               sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let paddingSpace = sectionInsets.left *  (itemsPerRowCompact + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRowCompact
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+                                
+    }
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
