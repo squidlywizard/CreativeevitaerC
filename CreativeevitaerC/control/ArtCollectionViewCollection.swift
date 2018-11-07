@@ -12,8 +12,9 @@ private let reuseIdentifier = "artIdentifier"
 
 public class ArtCollectionViewCollection: UICollectionViewController {
 
-  public override func viewDidLoad() {
-        super.viewDidLoad()
+  public override func viewDidLoad()  -> Void
+  {
+        super.viewDidLoad()// when screen initalizes
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -52,7 +53,8 @@ public class ArtCollectionViewCollection: UICollectionViewController {
         return 0
     }
 
-    public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
         // Configure the cell
