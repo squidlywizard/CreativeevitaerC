@@ -10,7 +10,29 @@ import UIKit
 
 private let reuseIdentifier = "artIdentifier"
 
-public class ArtCollectionViewCollection: UICollectionViewController {
+public class ArtCollectionViewCollection: UICollectionViewController
+{
+    //MARK: DATA MEMBERS FOR CREATIVITY SCREEN
+    
+    private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    private let itemsPerRowCompact : CGFloat = 4
+    private let itemsPerRowNormal : CGFloat = 6
+    
+    private let creativeCs : [UIImage?]  =
+    {
+        return [
+            UIImage(named: "wizardCat"),
+            UIImage(named: "spokbon"),
+            UIImage(named: "bnehaiku"),
+            UIImage(named: "bottomText"),
+            UIImage(named: "bowBones"),
+            UIImage(named: "haikubon"),
+            UIImage(named: "helthBone"),
+            UIImage(named: "myimage"),
+            
+            
+        ]
+    }()
 
   public override func viewDidLoad()  -> Void
   {
