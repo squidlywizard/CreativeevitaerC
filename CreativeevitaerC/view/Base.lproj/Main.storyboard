@@ -10,20 +10,40 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="Aoo-OL-RWe">
+        <!--Collection View Controller-->
+        <scene sceneID="rqI-Jw-ARa">
             <objects>
-                <viewController id="g2d-wm-eKs" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IVT-vG-xFA">
+                <collectionViewController id="NHy-hc-wgU" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="EO5-n5-gin">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="q8T-Q5-gBB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8UX-D6-DLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" red="1" green="0.99485069614471711" blue="0.96806388795942755" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nOg-JK-bdA">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="artidentifier" id="hZl-ex-3Zn">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="NHy-hc-wgU" id="lG4-M1-hGK"/>
+                            <outlet property="delegate" destination="NHy-hc-wgU" id="0PG-5B-Y2B"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="uo0-UU-WE9"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4al-Ed-Zso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="702" y="32"/>
+            <point key="canvasLocation" x="687" y="29"/>
         </scene>
         <!--Creative View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -39,11 +59,11 @@
                                 <color key="backgroundColor" red="0.041681021149999997" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mu7-YB-sN5">
-                                <rect key="frame" x="155" y="520" width="105" height="30"/>
+                                <rect key="frame" x="155" y="537" width="105" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Change Screen"/>
                                 <connections>
-                                    <segue destination="g2d-wm-eKs" kind="show" id="Lu2-TM-Ndm"/>
+                                    <segue destination="NHy-hc-wgU" kind="show" id="Agy-Nr-WZN"/>
                                 </connections>
                             </button>
                         </subviews>
