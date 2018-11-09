@@ -29,6 +29,7 @@ public class ArtCollectionViewCollection: UICollectionViewController
             UIImage(named: "haikubon"),
             UIImage(named: "helthBone"),
             UIImage(named: "my image"),
+            UIImage(named: "pepe")
             
             
         ]
@@ -44,7 +45,8 @@ public class ArtCollectionViewCollection: UICollectionViewController
             "dangerBone",
             "bone bone bone bone bone bone",
             "wellBone",
-            "mydrawing"
+            "mydrawing",
+            "shadilay"
             
         ]
     }()
@@ -57,8 +59,8 @@ public class ArtCollectionViewCollection: UICollectionViewController
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+    
+    
 
         // Do any additional setup after loading the view.
     }
@@ -82,22 +84,27 @@ public class ArtCollectionViewCollection: UICollectionViewController
 
     public override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        
+        return creativeCs.count
+        
     }
 
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell// the _ means it doesnt have an outside name
     {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let artCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ArtCell
+        
+        artCell.backgroundColor = .purple
+        artCell.artImage.image = creativeCs[indexPath.row]
+        artCell.artLabel.text = labels[indexPath.row]
     
-        // Configure the cell
+      
     
-        return cell
+        return artCell
     }
 
     // MARK: UICollectionViewDelegate
@@ -112,6 +119,20 @@ public class ArtCollectionViewCollection: UICollectionViewController
         
         return CGSize(width: widthPerItem, height: widthPerItem)
                                 
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               insetForSectionAt section: Int) -> UIEdgeInsets
+    {
+        return sectionInsets
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               insetForSectionAt section: Int) -> CGFloat
+    {
+        return sectionInsets.left
     }
 
     /*
