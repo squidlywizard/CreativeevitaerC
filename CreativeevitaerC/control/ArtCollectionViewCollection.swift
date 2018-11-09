@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "artIdentifier"
+private let reuseIdentifier = "artidentifier"
 
 public class ArtCollectionViewCollection: UICollectionViewController
 {
