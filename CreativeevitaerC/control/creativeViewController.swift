@@ -23,6 +23,11 @@ public class creativeViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet var load: UIView!
+  
+        }
+        
+    
+    
 
-}
 

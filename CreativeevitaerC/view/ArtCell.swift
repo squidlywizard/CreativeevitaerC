@@ -17,4 +17,5 @@ public class ArtCell: UICollectionViewCell
     @IBOutlet weak var artLabel: UILabel!
     
     
+    
 }
